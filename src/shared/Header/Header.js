@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext';
+import img1 from '../../assets/husband.png'
 
 const Header = () => {
   const {user,logOut}=useContext(AuthContext)
@@ -26,7 +27,8 @@ const Header = () => {
         <li><Link to='/blog'>Blog</Link></li>
       </ul>
     </div>
-    <Link className="btn btn-ghost normal-case text-xl" to='/'>ESPOUSE</Link>
+<img src={img1} className='rounded-circle' style={{height:'100px'}} alt="" />
+    <Link className="btn btn-ghost normal-case text-4xl" to='/'>ESPOUSE</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
@@ -35,10 +37,10 @@ const Header = () => {
 
 
       {
-                user?.uid?
+                user?.email?
               <> <li> <button variant="btn btn-ghost" className=' '  onClick={logOut}>Log Out</button></li>
                <li><Link to='/service'>Add Service</Link></li>
-               <li><Link to='/my-review'>My Review</Link></li>
+               <li><Link to='/my-reviews'>My Review</Link></li>
               </>
             :
            <>  <li><Link to='/signup'>Sign up</Link></li>

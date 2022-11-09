@@ -6,7 +6,7 @@ const Registration = () => {
    
 
 
-    const {createUser,verifyEmail,updateUserProfile}=useContext(AuthContext)
+    const {createUser,updateUserProfile}=useContext(AuthContext)
 const navigate=useNavigate()
 const [error,setError]=useState('')
     const handleSubmit=(event)=>{
