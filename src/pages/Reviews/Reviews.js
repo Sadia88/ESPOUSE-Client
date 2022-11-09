@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/UserContext';
 import { FaUserCircle } from 'react-icons/fa';
+import AllReview from './AllReview';
 
 
 const Reviews = ({service}) => {
@@ -17,7 +18,7 @@ const {user}=useContext(AuthContext)
           userImage: user?.photoURL,
           reviewText:e.target.reviewText.value
         };
-    console.log(review)
+    // console.log(review)
         fetch("http://localhost:5000/reviews", {
           method: "POST",
           headers: {
@@ -45,7 +46,7 @@ const {user}=useContext(AuthContext)
    
     <div className="text-center lg:text-left">
      
-     
+     <AllReview id={service._id} ></AllReview>
     </div>
     
        {/* <div>
@@ -59,7 +60,7 @@ const {user}=useContext(AuthContext)
 
 
 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 px-10 border-solid border-2 border-white-600">
-    <h1 className="text-2xl font-bold text-center">Write Your opinion here </h1>
+    <h1 className="text-2xl font-bold text-center">Write Your opinion here  </h1>
         <form onSubmit={handleSubmit} >
           {/* <div className="flex items-center mb-5 p-2">
             <label className="inline-block w-40 mr-6 text-right font-bold text-gray-600">
