@@ -18,28 +18,29 @@ const {user}=useContext(AuthContext)
           reviewText:e.target.reviewText.value
         };
     console.log(review)
-        // fetch("http://localhost:5000/reviews", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json"
-        //   },
-        //   body: JSON.stringify(review)
-        // }).then(res => res.json())
-        // .then(data => {
-        //   if(data.success){
-        //     toast.success(data.message);
-        //   } else {
-        //     toast.error(data.error);
-        //   }
-        // })
-        // .catch(err => {
-        //   toast.error(err.message);
-        // })
+        fetch("http://localhost:5000/reviews", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json"
+          },
+          body: JSON.stringify(review)
+        }).then(res => res.json())
+        .then(data => {
+          if(data.success){
+            toast.success(data.message);
+          } else {
+            toast.error(data.error);
+          }
+        })
+        .catch(err => {
+          toast.error(err.message);
+        })
         
       };
     return (
         <div className="hero  w-full my-20">
   <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
+   
 
    
     <div className="text-center lg:text-left">
