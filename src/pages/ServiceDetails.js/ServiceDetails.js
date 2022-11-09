@@ -32,7 +32,7 @@ const ServiceDetails = () => {
   </div>
 </div>
 <div className='my-10'>
-    <h1 className='text-5xl font-semibold py-10'>What People say about our Service "{service.name}"</h1>
+   
     <Reviews service={service}></Reviews>
 </div>
         </div>

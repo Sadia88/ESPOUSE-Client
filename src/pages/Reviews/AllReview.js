@@ -4,7 +4,7 @@ import ReviewCard from './ReviewCard';
 const AllReview = ({id}) => {
 
 
-    const [reviews,setReviews]=useState({})
+    const [reviews,setReviews]=useState([])
     
 
 useEffect(()=>{
@@ -16,9 +16,10 @@ useEffect(()=>{
 }
 ,[id])
 
-console.log(reviews)
+// console.log(reviews)
     return (
         <div>
+             
             {
                 reviews.map(review=><ReviewCard key={review._id} review={review}></ReviewCard>)
             }

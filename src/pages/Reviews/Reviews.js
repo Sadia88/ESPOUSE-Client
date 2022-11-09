@@ -45,6 +45,8 @@ const {user}=useContext(AuthContext)
 
    
     <div className="text-center lg:text-left">
+    <h1 className='text-4xl font-semibold py-10'>What People say about My Service <br />
+    <span className='text-center flex justify-center'>"{service?.name}"</span></h1>
      
      <AllReview id={service._id} ></AllReview>
     </div>
@@ -59,7 +61,7 @@ const {user}=useContext(AuthContext)
        </div> */}
 
 
-<div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 px-10 border-solid border-2 border-white-600">
+<div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-100 px-10 border-solid border-2 border-white-600">
     <h1 className="text-2xl font-bold text-center">Write Your opinion here  </h1>
         <form onSubmit={handleSubmit} >
           {/* <div className="flex items-center mb-5 p-2">
