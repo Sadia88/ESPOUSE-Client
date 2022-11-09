@@ -77,7 +77,7 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <input type='submit' className="btn bg-orange-600 border-none" value='Sign In' />
+              <input type='submit' className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg border-none" value='Sign In' />
             </div>
             <div>
               {error}
