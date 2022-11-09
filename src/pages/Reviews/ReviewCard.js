@@ -10,7 +10,7 @@ const ReviewCard = ({review}) => {
    
     <p>"{review.reviewText}"</p>
     
-    <div className="card-actions flex justify-end align-items-center">
+    <div className="card-actions flex justify-end align-items-cen">
     <small className=" ">--{review.email}</small>
      <img src={review.userImage} className='rounded-full w-10' alt="" />
     </div>

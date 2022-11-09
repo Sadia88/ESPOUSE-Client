@@ -19,7 +19,7 @@ const Login = () => {
             .then((result) => {
                 // Signed in 
                 const user = result.user;
-                // setAuthToken(user)
+                setAuthToken(user)
                 // ...
               })
               .catch((error) => {
@@ -39,7 +39,7 @@ const Login = () => {
                
                 const user = result.user;
     
-                // setAuthToken(user)
+                setAuthToken(user)
                 navigate(from, { replace: true });
                
               })

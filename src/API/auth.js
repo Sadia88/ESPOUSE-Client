@@ -6,7 +6,7 @@ export const setAuthToken=(user)=>{
       email: user.email
     }
 
-    fetch('',{
+    fetch('http://localhost:5000/jwt',{
 
     method: "POST",
     headers:{

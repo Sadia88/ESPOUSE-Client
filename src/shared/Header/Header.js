@@ -22,7 +22,7 @@ const Header = () => {
           </Link>
         
         </li>
-        <li><Link to='/service'>Add Service</Link></li>
+       
         <li><Link to='/blog'>Blog</Link></li>
       </ul>
     </div>
@@ -36,7 +36,10 @@ const Header = () => {
 
       {
                 user?.uid?
-               <li> <button variant="btn btn-ghost" className=' '  onClick={logOut}>Log Out</button></li>
+              <> <li> <button variant="btn btn-ghost" className=' '  onClick={logOut}>Log Out</button></li>
+               <li><Link to='/service'>Add Service</Link></li>
+               <li><Link to='/my-review'>My Review</Link></li>
+              </>
             :
            <>  <li><Link to='/signup'>Sign up</Link></li>
            <li tabIndex={0}>

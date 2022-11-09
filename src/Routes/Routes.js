@@ -11,6 +11,7 @@ import NotFound from "../pages/NotFound/NotFound";
 import Reviews from "../pages/Reviews/Reviews";
 import HomeService from "../pages/Home/HomeService/HomeService";
 import ServiceDetails from "../pages/ServiceDetails.js/ServiceDetails";
+import MyReview from "../pages/MyReview.js/MyReview";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         {
             path: "/reviews",
             element: <Reviews></Reviews>, 
+        },
+        {
+            path: "/my-review",
+            element: <MyReview></MyReview>, 
         },
         {
             path: "/services",
