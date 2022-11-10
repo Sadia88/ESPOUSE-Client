@@ -27,7 +27,7 @@ const Header = () => {
         <li><Link to='/blog'>Blog</Link></li>
       </ul>
     </div>
-<img src={img1} className='rounded-circle' style={{height:'100px'}} alt="" />
+<img src={img1} className='rounded-full' style={{height:'100px'}} alt="" />
     <Link className="btn btn-ghost normal-case text-4xl" to='/'>ESPOUSE</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -40,7 +40,7 @@ const Header = () => {
                 user?.email?
               <> <li> <button variant="btn btn-ghost" className=' '  onClick={logOut}>Log Out</button></li>
                <li><Link to='/service'>Add Service</Link></li>
-               <li><Link to='/my-reviews'>My Review</Link></li>
+               <li><Link to='/myReviews'>My Review</Link></li>
               </>
             :
            <>  <li><Link to='/signup'>Sign up</Link></li>
@@ -57,7 +57,7 @@ const Header = () => {
 
 
       <li><Link to='/add-service'>Add Service</Link></li>
-      <li><Link to='/reviews'>My review</Link></li>
+      
       <li><Link to='/blog'>Blog</Link></li>
     </ul>
   </div>

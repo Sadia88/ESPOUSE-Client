@@ -48,7 +48,7 @@ const {user}=useContext(AuthContext)
     <h1 className='text-4xl font-semibold py-10'>What People say about My Service <br />
     <span className='text-center flex justify-center'>"{service?.name}"</span></h1>
      
-     <AllReview id={service._id} ></AllReview>
+     <AllReview  id={service?.id}></AllReview>
     </div>
     
        {/* <div>

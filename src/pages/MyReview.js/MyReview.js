@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/UserContext';
 import ReviewCard from '../Reviews/ReviewCard';
+import MyReviewCard from './MyReviewCard';
 
 
 ;
@@ -11,10 +12,10 @@ const MyReview = () => {
     
     
      useEffect(()=> {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('token')}`
-            }
+        fetch(`http://localhost:5000/myReviews?email=${user?.email}`, {
+            // headers: {
+            //     authorization: `Bearer ${localStorage.getItem('token')}`
+            // }
         })
       .then(res => {
                 if (res.status === 401 || res.status === 403) {
@@ -31,10 +32,10 @@ const MyReview = () => {
         const handleDelete=id=>{
             const proceed=window.confirm("Are sure ,You want to delete Your review?")
             if(proceed){
-              fetch(`http://localhost:5000/reviews${id}`,{
+              fetch(`http://localhost:5000/myReviews${id}`,{
                   method: "DELETE",
                   headers: {
-                      authorization: `Bearer ${localStorage.getItem('token')}`
+                      // authorization: `Bearer ${localStorage.getItem('token')}`
                   }
               })
               .then(res=>res.json())
@@ -43,7 +44,7 @@ const MyReview = () => {
               if (data.deletedCount >0) {
                 alert("Your review is deleted successfully.");
     
-                const remaining=reviews.filter(order=>order._id !==id);
+                const remaining=reviews.filter(review=>review._id !==id);
                 setReviews(remaining)
               }})
               
@@ -54,11 +55,11 @@ const MyReview = () => {
      
     
         return (
-            <div>
+            <div className='grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-3'>
                 {
     
     
-    reviews.map(review=><ReviewCard key={review._id}  review={review} handleDelete={handleDelete} ></ReviewCard>)
+    reviews.map(review=><MyReviewCard key={review._id}  review={review} handleDelete={handleDelete} ></MyReviewCard>)
     }
             </div>
         );

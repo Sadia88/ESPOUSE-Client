@@ -15,7 +15,7 @@ const SlideItems = ({slide}) => {
                     </h1>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 w-2/5 left-24 top-1/2">
-                    <p className='text-4xl text-white'>Make your special day memorable</p>
+                    <p className='text-4xl text-white'>Make your special day memorable with help of me</p>
                 </div>
                 <div className="absolute flex justify-start transform -translate-y-1/2 w-2/5 left-24 top-3/4">
                     <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg mr-5">Discover More</button>

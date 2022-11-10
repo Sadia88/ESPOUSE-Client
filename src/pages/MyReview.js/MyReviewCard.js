@@ -7,6 +7,7 @@ const MyReviewCard = ({review,handleDelete}) => {
         <div>
             
             <div className="card w-96 bg-base-100  shadow-gray-500/40 shadow-2xl my-10 border-b-zinc-300 border-3">
+              <h2 className='card-title  flex justify-center'>Your opinion about {review.EventName}</h2>
   <div className="card-body">
    
     <p>"{review.reviewText}"</p>
