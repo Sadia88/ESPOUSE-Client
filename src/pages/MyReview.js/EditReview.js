@@ -27,9 +27,7 @@ const EditReview = () => {
          reviewText:e.target.reviewText.value
 
 
-    //      name: e.target.name.value,
-    //   price: e.target.price.value,
-    //   image: e.target.image.value
+   
     };
 
     fetch(`https://espouse-server-sadia88.vercel.app/myReviews/${id}`, {
