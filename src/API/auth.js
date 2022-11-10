@@ -6,7 +6,7 @@ export const setAuthToken=(user)=>{
       email: user.email
     }
 
-    fetch('http://localhost:5000/jwt',{
+    fetch('https://espouse-server-sadia88.vercel.app/jwt',{
 
     method: "POST",
     headers:{

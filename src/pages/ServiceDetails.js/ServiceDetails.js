@@ -10,7 +10,7 @@ const ServiceDetails = () => {
  
 
   useEffect(() => {
-    fetch(`http://localhost:5000/service/${id}`)
+    fetch(`https://espouse-server-sadia88.vercel.app/service/${id}`)
       .then((res) => res.json())
      .then(data=>setService(data.data))
        

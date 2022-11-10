@@ -14,7 +14,7 @@ const AddServices = () => {
           description:e.target.description.value
         };
     // console.log(product)
-        fetch("http://localhost:5000/add-service", {
+        fetch("https://espouse-server-sadia88.vercel.app/add-service", {
           method: "POST",
           headers: {
             "content-type": "application/json",

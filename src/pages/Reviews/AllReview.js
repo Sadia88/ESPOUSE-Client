@@ -10,7 +10,7 @@ const AllReview = ({id}) => {
 useEffect(()=>{
 
 
-    fetch(`http://localhost:5000/all-review/${id}`)
+    fetch(`https://espouse-server-sadia88.vercel.app/all-review/${id}`)
     .then(res=>res.json())
     .then(data=>{
         setRefresh(!refresh)

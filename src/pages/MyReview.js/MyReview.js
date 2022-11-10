@@ -17,7 +17,7 @@ const MyReview = () => {
  
     
      useEffect(()=> {
-        fetch(`http://localhost:5000/myReviews?email=${user?.email}`, {
+        fetch(`https://espouse-server-sadia88.vercel.app/myReviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -35,7 +35,7 @@ const MyReview = () => {
     
     const handleDelete = (id) => {
       // console.log(id)
-      fetch(`http://localhost:5000/myReviews/${id}`, {
+      fetch(`https://espouse-server-sadia88.vercel.app/myReviews/${id}`, {
          headers: {
                   authorization: `Bearer ${localStorage.getItem('token')}`
               },
@@ -60,7 +60,7 @@ const MyReview = () => {
     }
 
 
-    console.log(reviews.length)
+   
         return (
             <div>
              

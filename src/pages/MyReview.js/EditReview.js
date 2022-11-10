@@ -13,7 +13,7 @@ const EditReview = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/myReviews/${id}`)
+    fetch(`https://espouse-server-sadia88.vercel.app/myReviews/${id}`)
     .then(res=>res.json())
     .then(data=>setReview(data.data))
   }
@@ -32,7 +32,7 @@ const EditReview = () => {
     //   image: e.target.image.value
     };
 
-    fetch(`http://localhost:5000/myReviews/${id}`, {
+    fetch(`https://espouse-server-sadia88.vercel.app/myReviews/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
