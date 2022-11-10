@@ -39,7 +39,7 @@ const Header = () => {
       {
                 user?.email?
               <> <li> <button variant="btn btn-ghost" className=' '  onClick={logOut}>Log Out</button></li>
-               <li><Link to='/service'>Add Service</Link></li>
+               <li><Link to='/add-service'>Add Service</Link></li>
                <li><Link to='/myReviews'>My Review</Link></li>
               </>
             :

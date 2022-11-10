@@ -34,7 +34,10 @@ const EditReview = () => {
     fetch(`http://localhost:5000/myReviews/${id}`, {
       method: "PATCH",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('token')}`
+      }
       },
       body: JSON.stringify(review)
     }).then(res => res.json())

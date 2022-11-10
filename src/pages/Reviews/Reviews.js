@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/UserContext';
 import { FaUserCircle } from 'react-icons/fa';
 import AllReview from './AllReview';
+import { Link } from 'react-router-dom';
 
 
 const Reviews = ({service}) => {
@@ -56,25 +57,36 @@ const {user}=useContext(AuthContext)
 
 
 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-100 px-10 border-solid border-2 border-white-600">
-    <h1 className="text-2xl font-bold text-center">Write Your opinion here  </h1>
-        <form onSubmit={handleSubmit} >
+    { user?.uid?
+    <>
+     <h1 className="text-2xl font-bold text-center">Write Your opinion here  </h1>
+      <form onSubmit={handleSubmit} >
+      
         
+        <div className="flex items-center mb-10 p-2 border-2">
+         
           
-          <div className="flex items-center mb-10 p-2 border-2">
-           
-            
-            <textarea
-              type="textarea"
-              name="reviewText"
-              placeholder=" Write your opinion here"
-              className="flex-1  border-2 textarea textarea-bordered  border-gray-400 focus:border-black-400 text-gray-600 placeholder-gray-400 "
-            />
-          </div>
+          <textarea
+            type="textarea"
+            name="reviewText"
+            placeholder=" Write your opinion here"
+            className="flex-1  border-2 textarea textarea-bordered  border-gray-400 focus:border-black-400 text-gray-600 placeholder-gray-400 "
+          />
+        </div>
 
-          <div className="text-center w-full">
-            <button className="w-full mb-5   font-bold btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" type='submit'>Post</button>
-          </div>
-        </form>
+        <div className="text-center w-full">
+          <button className="w-full mb-5   font-bold btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" type='submit'>Post</button>
+        </div>
+      </form>
+    </>
+    :
+    <>
+
+    <h1 className='mt-4'>Please login to add a review</h1>
+    <Link className='btn my-5' to={'/login'}>Login</Link>
+    </>
+     
+    }
         </div>
       </div>
     </div>

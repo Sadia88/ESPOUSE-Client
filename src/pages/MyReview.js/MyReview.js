@@ -12,12 +12,13 @@ const MyReview = () => {
     const {user,logOut}=useContext(AuthContext)
     const [reviews,setReviews]=useState([])
     const [refresh, setRefresh] = useState(false);
+ 
     
      useEffect(()=> {
         fetch(`http://localhost:5000/myReviews?email=${user?.email}`, {
-            // headers: {
-            //     authorization: `Bearer ${localStorage.getItem('token')}`
-            // }
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
         })
       .then(res => {
                 if (res.status === 401 || res.status === 403) {
@@ -33,6 +34,9 @@ const MyReview = () => {
     const handleDelete = (id) => {
       // console.log(id)
       fetch(`http://localhost:5000/myReviews/${id}`, {
+         headers: {
+                  authorization: `Bearer ${localStorage.getItem('token')}`
+              },
         method: "DELETE",
       })
       .then(res => res.json())
@@ -53,14 +57,18 @@ const MyReview = () => {
       navigate(`/myReviews/edit/${id}`)
     }
 
-    
+
+    console.log(reviews.length)
         return (
-            <div className='grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-3'>
+            <div>
+             
+              <div className='grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-3'>
                 {
     
     
     reviews.map(review=><MyReviewCard key={review._id}  review={review} handleDelete={handleDelete}  handleEdit={handleEdit}></MyReviewCard>)
     }
+            </div>
             </div>
         );
     };

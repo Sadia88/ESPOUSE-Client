@@ -14,15 +14,14 @@ const AboutMe = () => {
     <h1 className='py-5 text-5xl font-bold flex justify-center '>ABOUT ME</h1>
     <h1 className="text-3xl font-bold text-center py-6">'Sadia Sharmin'</h1>
     <p><span className='font-semibold text-xl'>Skills: </span>
-    <ol className='pl-6'>
-        <li>Bridal Mekeup</li>
+    <span className='pl-6'>
         <li>Bridal Mekeup</li>
         <li>Mehedi design</li>
         <li>Cake design</li>
         <li>Decoration</li>
         <li>Photography</li>
         <li>Videography</li>
-    </ol>
+    </span>
     </p>
 <p><span className='font-semibold text-xl'>Experience: </span>5 Years</p>
 <p><span className='font-semibold text-xl'>Email: </span>sadiashramin460280@gmail.com</p>

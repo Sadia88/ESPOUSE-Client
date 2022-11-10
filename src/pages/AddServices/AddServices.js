@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddServices = () => {
     const handleSubmit = (e) => {
@@ -10,17 +11,20 @@ const AddServices = () => {
           image: e.target.image.value,
           description:e.target.description.value
         };
-    console.log(product)
+    // console.log(product)
         fetch("http://localhost:5000/add-service", {
           method: "POST",
           headers: {
-            "content-type": "application/json"
+            "content-type": "application/json",
+            headers: {
+              authorization: `Bearer ${localStorage.getItem('token')}`
+          }
           },
           body: JSON.stringify(product)
         }).then(res => res.json())
         .then(data => {
           if(data.success){
-            toast.success(data.message);
+            toast("Successfully added service");
           } else {
             toast.error(data.error);
           }
@@ -28,6 +32,7 @@ const AddServices = () => {
         .catch(err => {
           toast.error(err.message);
         })
+        e.target.reset()
         
       };
     return (
