@@ -56,7 +56,7 @@ const Header = () => {
 
 
 
-      <li><Link to='/add-service'>Add Service</Link></li>
+     
       
       <li><Link to='/blog'>Blog</Link></li>
     </ul>

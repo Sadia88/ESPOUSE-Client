@@ -18,6 +18,7 @@ const {user}=useContext(AuthContext)
           userImage: user?.photoURL,
           reviewText:e.target.reviewText.value
         };
+        e.target.reset()
     // console.log(review)
         fetch("http://localhost:5000/reviews", {
           method: "POST",
@@ -48,47 +49,19 @@ const {user}=useContext(AuthContext)
     <h1 className='text-4xl font-semibold py-10'>What People say about My Service <br />
     <span className='text-center flex justify-center'>"{service?.name}"</span></h1>
      
-     <AllReview  id={service?.id}></AllReview>
+     <AllReview  id={service?._id}></AllReview>
     </div>
     
-       {/* <div>
-       {
-                user?.photoURL ? <div className='d-block'>  <img  alt='' src={user?.photoURL} style={{height:'40px',}}>
-                    
-                </img>  </div> : <FaUserCircle style={{height:'35px',}} ></FaUserCircle>
-              }
-       <h1>Hi {user.name} </h1>
-       </div> */}
+    
 
 
 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-100 px-10 border-solid border-2 border-white-600">
     <h1 className="text-2xl font-bold text-center">Write Your opinion here  </h1>
         <form onSubmit={handleSubmit} >
-          {/* <div className="flex items-center mb-5 p-2">
-            <label className="inline-block w-40 mr-6 text-right font-bold text-gray-600">
-              Event Name
-            </label>
-            <input
-              type="text"
-              name="EventName"
-             defaultValue={service.name}
-              className="flex-1 py-2 border-2 border-gray-400 focus:border-black-400 text-gray-600 placeholder-gray-400 "
-            />
-          </div> */}
-
-         
-          {/* <div className="flex items-center mb-5 p-2">
-          <label className="inline-block w-40 mr-6 text-right font-bold text-gray-600">Photo URL</label>
-           
-            <input name="photoURL"  className="flex-1 py-2 border-2 border-gray-400 focus:border-black-400 text-gray-600 placeholder-gray-400" type="text" defaultValue={user?.photoURL} />
-            </div> */}
-
+        
           
           <div className="flex items-center mb-10 p-2 border-2">
-            {/* <label className=" w-40 mr-6 text-right font-bold text-gray-600">
-            Review
-            </label> */}
-
+           
             
             <textarea
               type="textarea"

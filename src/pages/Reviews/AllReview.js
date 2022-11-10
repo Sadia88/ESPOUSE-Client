@@ -5,16 +5,18 @@ const AllReview = ({id}) => {
 
 
     const [reviews,setReviews]=useState([])
-    
+    const [refresh, setRefresh] = useState(false);
 
 useEffect(()=>{
 
 
     fetch(`http://localhost:5000/all-review/${id}`)
     .then(res=>res.json())
-    .then(data=>setReviews(data.data))
+    .then(data=>{
+        setRefresh(!refresh)
+        setReviews(data.data)})
 }
-,[id])
+,[id,refresh])
 
 // console.log(reviews)
     return (

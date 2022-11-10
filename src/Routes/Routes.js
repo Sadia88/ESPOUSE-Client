@@ -12,6 +12,7 @@ import Reviews from "../pages/Reviews/Reviews";
 import HomeService from "../pages/Home/HomeService/HomeService";
 import ServiceDetails from "../pages/ServiceDetails.js/ServiceDetails";
 import MyReview from "../pages/MyReview.js/MyReview";
+import EditReview from "../pages/MyReview.js/EditReview";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         {
             path: "/myReviews",
             element: <MyReview></MyReview>, 
+        },
+        {
+            path: "/myReviews/edit/:id",
+            element: <EditReview></EditReview>, 
         },
         {
             path: "/services",

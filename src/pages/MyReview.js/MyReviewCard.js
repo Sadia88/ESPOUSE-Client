@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const MyReviewCard = ({review,handleDelete}) => {
+const MyReviewCard = ({review,handleDelete,handleEdit}) => {
 
-    
+ 
+
     return (
         <div>
             
@@ -16,6 +17,10 @@ const MyReviewCard = ({review,handleDelete}) => {
     <small className=" ">--{review.email}</small>
      <img src={review.userImage} className='rounded-full w-10' alt="" />
     </div>
+  </div>
+  <div className='card-compact flex py-5 justify-around'>
+<button className='btn'   onClick={() => handleDelete(review._id)}>Delete</button>
+<button className='btn'   onClick={() => handleEdit(review._id)}>Edit</button>
   </div>
 </div>
         </div>
