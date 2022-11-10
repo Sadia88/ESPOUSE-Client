@@ -66,7 +66,7 @@ const MyReview = () => {
              
               <div className='grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-3'>
                 {
-    reviews.length === 0? <h1 className='my-16 text-center py-40 flex align-middle justify-center'>No review data is available</h1>: reviews.map(review=><MyReviewCard key={review._id}  review={review} handleDelete={handleDelete}  handleEdit={handleEdit}></MyReviewCard>
+    reviews.length === 0? <h1 className='my-16 text-center py-40 flex align-middle justify-center pl-40 text-4xl ml-50'>No reviews were added</h1>: reviews.map(review=><MyReviewCard key={review._id}  review={review} handleDelete={handleDelete}  handleEdit={handleEdit}></MyReviewCard>
     
     )
     }
