@@ -6,9 +6,18 @@ const Registration = () => {
    
 
 
-    const {createUser,updateUserProfile}=useContext(AuthContext)
+    const {createUser,updateUserProfile,loader}=useContext(AuthContext)
 const navigate=useNavigate()
 const [error,setError]=useState('')
+
+if(loader){
+  return <button type="button" class="bg-indigo-500 rounded-2xl text-center flex justify-center" disabled>
+  <svg class="animate-spin h-10 w-5 mr-3 ..." viewBox="0 0 24 24">
+   
+  </svg>
+  Loading...
+</button>
+}
     const handleSubmit=(event)=>{
         event.preventDefault();
         const form=event.target

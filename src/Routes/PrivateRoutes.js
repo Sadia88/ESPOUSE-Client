@@ -9,7 +9,12 @@ import { AuthContext } from '../Context/UserContext';
     const location=useLocation()
     
     if(loader){
-        return <h1>Loading...</h1>
+        return <button type="button" class="bg-indigo-500 ..." disabled>
+        <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+         
+        </svg>
+        Loading...
+      </button>
     }
         if (user) {
             // Redirect them to the /login page, but save the current location they were

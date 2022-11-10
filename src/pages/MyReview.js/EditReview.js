@@ -2,10 +2,11 @@ import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 
 const EditReview = () => {
 
-
+  useTitle('Edit Review')
     const router = useParams();
   const [reviews, setReview] = useState({});
   const { id } = router;

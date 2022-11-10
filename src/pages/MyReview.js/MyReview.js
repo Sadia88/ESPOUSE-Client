@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Context/UserContext';
+import useTitle from '../../hooks/useTitle';
 import ReviewCard from '../Reviews/ReviewCard';
 import MyReviewCard from './MyReviewCard';
 
@@ -9,6 +10,7 @@ import MyReviewCard from './MyReviewCard';
 ;
 
 const MyReview = () => {
+  useTitle('MyReview')
     const {user,logOut}=useContext(AuthContext)
     const [reviews,setReviews]=useState([])
     const [refresh, setRefresh] = useState(false);

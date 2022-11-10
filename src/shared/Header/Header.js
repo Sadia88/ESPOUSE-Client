@@ -61,9 +61,7 @@ const Header = () => {
       <li><Link to='/blog'>Blog</Link></li>
     </ul>
   </div>
-  <div className="navbar-end">
-    <Link className="btn">Get started</Link>
-  </div>
+  
 </div>
         </div>
     );

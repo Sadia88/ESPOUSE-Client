@@ -3,12 +3,23 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsGoogle} from "react-icons/bs";
 import { setAuthToken } from '../../API/auth';
 import { AuthContext } from '../../Context/UserContext';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
-    const {signIn,googleSignin}=useContext(AuthContext)
+  useTitle('login')
+    const {signIn,googleSignin,loader}=useContext(AuthContext)
     const [error,setError]=useState('')
     const navigate = useNavigate();
     const location=useLocation()
+
+    if(loader){
+      return <button type="button" class="bg-indigo-500 rounded-full text-center flex justify-center" disabled>
+      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+       
+      </svg>
+      Loading...
+    </button>
+  }
     let from = location.state?.from?.pathname || "/";
         const handleSubmit=event=>{
             event.preventDefault()
